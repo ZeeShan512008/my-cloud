@@ -1,6 +1,7 @@
-FROM filebrowser/filebrowser:scratch
+FROM filebrowser/filebrowser
 
-VOLUME /srv
-EXPOSE 8080
+WORKDIR /srv
 
-ENTRYPOINT ["/filebrowser"]
+EXPOSE 80
+
+CMD ["filebrowser", "-r", "/srv"]
